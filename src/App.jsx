@@ -1,17 +1,13 @@
-
-import './App.css'
-import ProfileCard from './Components/ProfileCard'
+import "./App.css";
+import ProfileCard from "./profileCard";
 
 function App() {
-  return(
-    <div className='min-h-screen flex items-center-justify-center bg-gray-100'>
-      <ProfileCard
-      name="Elon musk"
-      bio="Billioner"
-      />
-    </div>
-  
-  )
+  return (
+    <ProfileCard
+      name="Elon Musk"
+      bio="CEO of Tesla and SpaceX. Innovator, entrepreneur, and visionary shaping the future of space and energy."
+    />
+  );
 }
 
-export default App
+export default App;
