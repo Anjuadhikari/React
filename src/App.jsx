@@ -1,12 +1,28 @@
 import "./App.css";
+import { ThemeProvider } from "./component/ThemeContext";
+import ThemeSwitch from "./component/ThemeSwitch";
 import ProfileCard from "./profileCard";
 
 function App() {
   return (
-    <ProfileCard
-      name="Elon Musk"
-      bio="CEO of Tesla and SpaceX. Innovator, entrepreneur, and visionary shaping the future of space and energy."
-    />
+    <ThemeProvider>
+      <ThemeSwitch />
+      <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col items-center justify-center gap-6 p-6 transition-colors">
+        <h1 className="text-4xl font-bold">Dark Mode Theme</h1>
+        <div className="mt-6 p-6 rounded-xl shadow-xl bg-gray-100 dark:bg-gray-800 w-full max-w-md">
+          <h2 className="text-2xl font-semibold mb-2">Theme Aware Card</h2>
+          <p>This card adapts on the current theme.</p>
+        </div>
+
+        {/* Uncomment and use ProfileCard if needed */}
+        {/*
+        <ProfileCard
+          name="Elon Musk"
+          bio="CEO of Tesla and SpaceX. Innovator, entrepreneur, and visionary shaping the future of space and energy."
+        />
+        */}
+      </div>
+    </ThemeProvider>
   );
 }
 
