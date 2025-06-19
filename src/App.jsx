@@ -3,12 +3,15 @@ import { ThemeProvider } from "./component/ThemeContext";
 import ThemeSwitch from "./component/ThemeSwitch";
 import Joke from "./components/joke";
 import ProfileCard from "./profileCard";
+import Counter from "./components/counter";
 
 function App() {
   return (
     <div>
-      <h1 className="text-center mt-10 color:black text:2xl">Jokes</h1>
-      <Joke/>
+      {/* <h1 className="text-center mt-10 color:black text:2xl">Jokes</h1>
+      <Joke/> */}
+     
+    <Counter />
 
     </div>
     // <ThemeProvider>
