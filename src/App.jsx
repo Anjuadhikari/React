@@ -4,14 +4,17 @@ import ThemeSwitch from "./component/ThemeSwitch";
 import Joke from "./components/joke";
 import ProfileCard from "./profileCard";
 import Counter from "./components/counter";
+import Todo from "./component/Todo";
 
 function App() {
   return (
     <div>
+      <Todo clasName="bg-stone-900 grid py-4 h-screen"/>
+    
       {/* <h1 className="text-center mt-10 color:black text:2xl">Jokes</h1>
       <Joke/> */}
      
-    <Counter />
+    {/* <Counter /> */}
 
     </div>
     // <ThemeProvider>
