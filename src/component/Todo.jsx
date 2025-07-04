@@ -1,11 +1,11 @@
-"USE client";
+"Use client";
 import React from "react";
 import TodoItem from "./TodoItems";
 import todo_icon from "../assets/todo_icon.png";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const Todo = () => {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(localStorage.getItem("tasks") ? JSON.parse(localStorage.getItem("tasks")) : []);
   const inputref = useRef();
   const addTask = () => {
     const inputtext = inputref.current.value.trim();
@@ -20,18 +20,30 @@ const Todo = () => {
       text: inputtext,
       completed: false,
     };
+
     setTasks((prev) => [...prev, Task]);
     inputref.current.value = "";
   };
+
   const deleteTask = (id) => {
-    setTasks((prev)=>{
-     return prev.filter((item)=> item.id!== id)
-
-
-    })
+    setTasks((prev) => {
+      return prev.filter((item) => item.id !== id);
+    });
   };
 
-
+  const toggleTask = (id) => {
+    setTasks((prev) => {
+      return prev.map((item) => {
+        if (item.id === id) {
+          return { ...item, completed: !item.completed };
+        }
+        return item;
+      });
+    });
+  };
+  useEffect(() => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
   return (
     <div className="bg-stone-900 grid py-4 min-h-screen">
       <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl">
@@ -60,7 +72,12 @@ const Todo = () => {
         {/* Task List */}
         <div className="flex flex-col gap-2">
           {tasks.map((item, index) => (
-            <TodoItem key={index} task={item.text} completed={item.completed} id={item.id} deleteTask={deleteTask} />
+            <TodoItem
+              key={item.id}
+              task={item}
+              deleteTask={deleteTask}
+              toggleTask={toggleTask}
+            />
           ))}
         </div>
       </div>
