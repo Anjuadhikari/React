@@ -5,19 +5,15 @@ import Joke from "./components/joke";
 import ProfileCard from "./profileCard";
 import Counter from "./components/counter";
 import Todo from "./component/Todo";
+import Multipage from "./component/multipage";
+
+
 
 
 function App() {
   return (
-    <div>
-      <Todo/>
-     
-
-      {/* <h1 className="text-center mt-10 color:black text:2xl">Jokes</h1>
-      <Joke/> */}
-
-      {/* <Counter /> */}
-    </div>
+   
+    <Multipage />
     // <ThemeProvider>
     //   <ThemeSwitch />
     //   <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col items-center justify-center gap-6 p-6 transition-colors">
