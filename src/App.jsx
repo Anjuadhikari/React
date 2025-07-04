@@ -6,10 +6,12 @@ import ProfileCard from "./profileCard";
 import Counter from "./components/counter";
 import Todo from "./component/Todo";
 
+
 function App() {
   return (
     <div>
-      <Todo />
+      <Todo/>
+     
 
       {/* <h1 className="text-center mt-10 color:black text:2xl">Jokes</h1>
       <Joke/> */}
