@@ -9,13 +9,12 @@ import Todo from "./component/Todo";
 function App() {
   return (
     <div>
-      <Todo clasName="bg-stone-900 grid py-4 h-screen"/>
-    
+      <Todo />
+
       {/* <h1 className="text-center mt-10 color:black text:2xl">Jokes</h1>
       <Joke/> */}
-     
-    {/* <Counter /> */}
 
+      {/* <Counter /> */}
     </div>
     // <ThemeProvider>
     //   <ThemeSwitch />
@@ -26,13 +25,13 @@ function App() {
     //       <p>This card adapts on the current theme.</p>
     //     </div>
 
-    //     Uncomment and use ProfileCard if needed 
-        
+    //     Uncomment and use ProfileCard if needed
+
     //     <ProfileCard
     //       name="Elon Musk"
     //       bio="CEO of Tesla and SpaceX. Innovator, entrepreneur, and visionary shaping the future of space and energy."
     //     />
-       
+
     //   </div>
     // </ThemeProvider>
   );
