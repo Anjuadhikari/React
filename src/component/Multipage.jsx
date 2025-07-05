@@ -35,11 +35,7 @@ export default function Multipage() {
           </Routes>
         </Router>
 
-        {/* <Hooks /> */}
-        {/* <Todo/> */}
-        {/* <h1 className="text-center mt-10 color:black text:2xl">Jokes</h1>
-        <Joke/> */}
-        {/* <Counter /> */}
+     
       </div>
     </div>
   );

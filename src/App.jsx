@@ -6,15 +6,20 @@ import ProfileCard from "./profileCard";
 import Counter from "./components/counter";
 import Todo from "./component/Todo";
 import Multipage from "./component/multipage";
-
-
-
+import MovieList from "./components/MovieList";
 
 function App() {
   return (
-   
-    <Multipage />
-    // <ThemeProvider>
+    <>
+    <MovieList/>
+      {/* <Multipage /> */}
+
+      {/* <Hooks /> */}
+      {/* <Todo/> */}
+      {/* <h1 className="text-center mt-10 color:black text:2xl">Jokes</h1>
+        <Joke/> */}
+      {/* <Counter /> */}
+      {/* // <ThemeProvider>
     //   <ThemeSwitch />
     //   <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white flex flex-col items-center justify-center gap-6 p-6 transition-colors">
     //     <h1 className="text-4xl font-bold">Dark Mode Theme</h1>
@@ -25,13 +30,14 @@ function App() {
 
     //     Uncomment and use ProfileCard if needed
 
-    //     <ProfileCard
-    //       name="Elon Musk"
+    //     <ProfileCard */}
+      {/* //       name="Elon Musk"
     //       bio="CEO of Tesla and SpaceX. Innovator, entrepreneur, and visionary shaping the future of space and energy."
     //     />
 
-    //   </div>
-    // </ThemeProvider>
+    //   </div> */}
+      {/* // </ThemeProvider> */}
+    </>
   );
 }
 
