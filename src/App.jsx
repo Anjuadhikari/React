@@ -7,11 +7,21 @@ import Counter from "./components/counter";
 import Todo from "./component/Todo";
 import Multipage from "./component/multipage";
 import MovieList from "./components/MovieList";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { FavouritesProvider } from "./components/Favourites";
 
 function App() {
   return (
     <>
-    <MovieList/>
+    <FavouritesProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<MovieList />} />
+          <Route path="/favourites" element={<Favourites />} />
+        </Routes>
+      </Router>
+      </FavouritesProvider>
+
       {/* <Multipage /> */}
 
       {/* <Hooks /> */}
