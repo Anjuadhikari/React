@@ -1,23 +1,36 @@
-import React, { createContext, useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import MovieCard from "./MovieCard";
+import { useFavourites } from "./FavouritesContext";
 
-const FavouritesContext = createContext();
+const MovieData = [
+  { id: 1, title: "Inception", year: 2010 },
+  { id: 2, title: "The Dark Knight", year: 2008 },
+  { id: 3, title: "Interstellar", year: 2014 },
+];
 
-export function useFavourites() {
-  return useContext(FavouritesContext);
-}
+export default function Favourites() {
+  const { favourites, toggleFavourite } = useFavourites();
 
-export function FavouritesProvider({ children }) {
-  const [favourites, setFavourites] = useState([]);
-
-  const toggleFavourite = (id) => {
-    setFavourites((prev) =>
-      prev.includes(id) ? prev.filter((fid) => fid !== id) : [...prev, id]
-    );
-  };
+  const favouriteMovies = MovieData.filter((movie) =>
+    favourites.includes(movie.id)
+  );
 
   return (
-    <FavouritesContext.Provider value={{ favourites, toggleFavourite }}>
-      {children}
-    </FavouritesContext.Provider>
+    <div style={{ maxWidth: 400, margin: "auto" }}>
+      <Link to="/" style={{ display: "block", marginBottom: 20 }}>
+        ← Back to Movies
+      </Link>
+
+      {favouriteMovies.length === 0 && <p>No favourites yet.</p>}
+
+      {favouriteMovies.map((movie) => (
+        <MovieCard
+          key={movie.id}
+          movie={movie}
+          isFavorite={true}
+          onToggleFavourite={toggleFavourite}
+        />
+      ))}
+    </div>
   );
 }

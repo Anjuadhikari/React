@@ -20,7 +20,7 @@ function App() {
           <Route path="/favourites" element={<Favourites />} />
         </Routes>
       </Router>
-      </FavouritesProvider>
+    </FavouritesProvider>
 
       {/* <Multipage /> */}
 
