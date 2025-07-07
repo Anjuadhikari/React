@@ -11,13 +11,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { FavouritesProvider } from "./components/Favourites";
 import { useState } from "react";
 import Form from "./component/form";
-
+import Intro from "./components/intro";
 function App() {
   // const [currentView, setCurrentView] = useState("movies");
   return (
     <>
-    <useToggle />
-      <Form />
+    <Intro/>
+    {/* <useToggle />
+      <Form /> */}
       {/* 
     <FavouritesProvider>
       <div className="app-container">
