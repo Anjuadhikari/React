@@ -10,21 +10,24 @@ import MovieList from "./components/MovieList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { FavouritesProvider } from "./components/Favourites";
 import { useState } from "react";
+import Form from "./component/form";
 
 function App() {
-  const [currentView, setCurrentView] = useState("movies");
+  // const [currentView, setCurrentView] = useState("movies");
   return (
     <>
+      <Form />
+      {/* 
     <FavouritesProvider>
       <div className="app-container">
         {/* Conditional Rendering based on current view */}
-        {currentView === "movies" ? (
+      {/* {currentView === "movies" ? (
           <MovieList onViewFavourites={() => setCurrentView("favourites")} />
         ) : (
           <Favourites onBackToMovies={() => setCurrentView("movies")} />
-        )}
-      </div>
-    </FavouritesProvider>
+        )} */}
+      {/* </div>
+    </FavouritesProvider> */}
 
       {/* <Multipage /> */}
 
