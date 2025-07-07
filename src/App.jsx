@@ -16,6 +16,7 @@ function App() {
   // const [currentView, setCurrentView] = useState("movies");
   return (
     <>
+    <useToggle />
       <Form />
       {/* 
     <FavouritesProvider>
